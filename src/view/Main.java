@@ -37,7 +37,13 @@ public class Main extends PApplet{
 		
 		marco = new Marco (350,250,40,-2,2);
 		
+		for (int i = 0; i < polo.size(); i++) {
+			polo.get(i).start();
 		}
+		marco.start();
+		}
+	
+	
 	
 	@Override
 	public void draw() {
@@ -55,17 +61,30 @@ public class Main extends PApplet{
 		marco.paintMarco(this);
 		marco.move();
 		marco.collitions();
-		
-		
-		
-
-	
-		
-		
-		
-		
+		textMarco();
+		textPolo();
 		}
 	
+	public void textMarco () {
+		
+		if(marco.isCall()) {
+			fill(0);
+			text("Marco", marco.getxMarco()-(marco.getSize()/2),marco.getyMarco());
+			System.out.println(marco.isCall());
+		}
+	}
 	
+	public void textPolo () {
+		for (int i = 0; i < polo.size(); i++) {
+			
+			if(polo.get(i).isAnswer()) {
+				text("POLO ",(polo.get(i).getxPolo()-17),(polo.get(i).getyPolo()-15));
+			text(polo.get(i).getxPolo()+", " + polo.get(i).getyPolo(), (polo.get(i).getxPolo()-25), 
+					(polo.get(i).getyPolo()+25));
+				System.out.println("poloTrue");
+			}
+		}
+		
+	}
 	
 }
