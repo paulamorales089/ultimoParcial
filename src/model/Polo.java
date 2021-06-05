@@ -26,6 +26,7 @@ public class Polo extends Thread {
 	}
 	
 	public void paintPolo (PApplet app) {
+		app.noStroke();
 		app.fill(53,226,234);
 		app.ellipse(xPolo, yPolo, size, size);
 	}
@@ -45,11 +46,11 @@ public class Polo extends Thread {
 			direct2 = 1;
 		}
 		
-		if(xPolo+size/2>500) {
+		if(xPolo+size/2>700) {
 			direct1 = -1 ;
 		}
 		
-		if(xPolo+size/2>500) {
+		if(yPolo+size/2>500) {
 			direct2 = -1;
 		}
 	}
