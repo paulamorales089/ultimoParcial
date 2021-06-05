@@ -1,12 +1,18 @@
 package view;
+import java.util.ArrayList;
+
+
+import model.Marco;
+import model.Polo;
 import processing.core.PApplet;
 	// paso 0
 public class Main extends PApplet{
 
 	public static void main(String[] args) {	
 		// paso 1
-		PApplet.main("principal");
+		PApplet.main("view.Main");
 	}
+	
 	
 	
 	@Override
@@ -15,19 +21,36 @@ public class Main extends PApplet{
 		size(500,500);
 	}
 	
+	
+	ArrayList <Polo> polo;
+	Marco marco; 
+	
+	
 	@Override
-	//paso 3
 	public void setup() {
+		
+		polo = new ArrayList<Polo>();
+		
+		for (int i = 0; i < 20; i++) {
+		polo.add(new Polo ((int)random(0,500),(int) random (0,500),30,1,-1));
+		}
+		
+		
 		}
 	
 	@Override
 	public void draw() {
-		// paso 4
 		
 		background(255);
+		/*System.out.println(mouseX + ","+ mouseY);
+		ellipse(mouseX, mouseY, 50,50); */
 		
-		System.out.println(mouseX + ","+ mouseY);
-		ellipse(mouseX, mouseY, 50,50); 
+		for (int i = 0; i < polo.size(); i++) {
+			polo.get(i).paintPolo(this);
+			polo.get(i).move();
+			polo.get(i).collitions();
+		}
+		
 		
 		
 		
@@ -38,5 +61,7 @@ public class Main extends PApplet{
 		
 		
 		}
+	
+	
 	
 }
