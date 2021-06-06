@@ -105,6 +105,7 @@ public class Main extends PApplet {
 				marco.setyMarco(polos.get(i).getyPolo());
 			}
 		}
-
+// INTENTE COMO NUNCA Y FRACASE COMO SIEMPRE. 
+//	Espero mi medio bonus porque intente que el polo fuera un marco y casi sirvio :D
 	}
 }
