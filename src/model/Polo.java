@@ -22,6 +22,7 @@ public class Polo extends Thread {
 	}
 	
 	public void run () {
+		move();
 		
 		answer = true;
 		try {
@@ -43,9 +44,6 @@ public class Polo extends Thread {
 		xPolo += direct1;
 		yPolo += direct2;
 		
-	}
-		
-	public void collitions() {
 		if(xPolo-size/2<0) {
 			direct1 = 1;
 		}
@@ -61,13 +59,9 @@ public class Polo extends Thread {
 		if(yPolo+size/2>500) {
 			direct2 = -1;
 		}
+	
 	}
 	
-		
-	
-	public void positions () {
-		
-	}
 	
 	public int getxPolo() {
 		return xPolo;

@@ -18,13 +18,15 @@ public class Marco extends Thread  {
 			this.direct1=direct1;
 			this.direct2=direct2;
 			this.speed=2;
-			this.call=false;
+			//this.call=false;
 		}
 		
 
 		public void run () {
 			
-			call = true; 
+			move();
+			
+			call = !call; 
 			try {
 				
 				Thread.sleep(2000);
@@ -45,9 +47,7 @@ public class Marco extends Thread  {
 			xMarco += direct1;
 			yMarco += direct2;
 		
-		}
-		
-		public void collitions() {
+			
 			if(xMarco-size/2<0) {
 				direct1 = 2;
 			}
@@ -64,6 +64,8 @@ public class Marco extends Thread  {
 				direct2 = -2;
 			}
 		}
+		
+		
 		
 		public void followPolo () {
 			
